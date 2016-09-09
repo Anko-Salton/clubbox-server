@@ -2,6 +2,7 @@ package com.clubboxrest.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,8 +10,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.mapping.Collection;
 
 /**
  * Created by cdsm16 on 12/04/2016.
@@ -22,16 +26,20 @@ public class Team implements Serializable {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 	@OneToOne
-	@JoinColumn(name="club")
+	@JoinColumn(name="\"club\"")
     private Club club;
-	@Column(name="name")
+	@Column(name="\"name\"")
     private String name;
 	@OneToOne
-	@JoinColumn(name="division")
+	@JoinColumn(name="\"division\"")
     private Division division;
 	@OneToOne
-	@JoinColumn(name="category")
+	@JoinColumn(name="\"category\"")
 	private Category category;
+	@OneToMany(mappedBy="teamHome")
+	private Set<Match> matchHome;
+	@OneToMany(mappedBy="teamAway")
+	private Set<Match> matchAway;
 
 	public Team(){
 		
@@ -79,4 +87,29 @@ public class Team implements Serializable {
     public void setDivision(Division division) {
         this.division = division;
     }
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public Set<Match> getMatchHome() {
+		return matchHome;
+	}
+
+	public void setMatchHome(Set<Match> matchHome) {
+		this.matchHome = matchHome;
+	}
+
+	public Set<Match> getMatchAway() {
+		return matchAway;
+	}
+
+	public void setMatchAway(Set<Match> matchAway) {
+		this.matchAway = matchAway;
+	}
+	
 }

@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
@@ -15,20 +16,18 @@ import javax.persistence.Table;
 public class Match extends GenericEvent  implements Serializable {
 	
 	@ManyToOne
-	@JoinTable(name = "teamHome")
-	@JoinColumn(name="teamHome")
-    private Team teamHome;
+	@JoinColumn(name = "\"teamHome\"", referencedColumnName = "id",insertable=false,updatable=false)
+	private Team teamHome;
 	@ManyToOne
-	@JoinTable(name = "teamAway")
-	@JoinColumn(name="teamHome")
-    private Team teamAway;
-	@Column(name="scoreHome")
+	@JoinColumn(name = "\"teamHome\"", referencedColumnName = "id",insertable=false,updatable=false)
+	private Team teamAway;
+	@Column(name="\"scoreHome\"")
     private Integer scoreHome;
-	@Column(name="scoreAway")
+	@Column(name="\"scoreAway\"")
     private Integer scoreAway;
-	@Column(name="resumeHome")
+	@Column(name="\"resumeHome\"")
     private String resumeHome;
-	@Column(name="resumeAway")
+	@Column(name="\"resumeAway\"")
     private String resumeAway;
 
     public static class List extends ArrayList<Match> {
