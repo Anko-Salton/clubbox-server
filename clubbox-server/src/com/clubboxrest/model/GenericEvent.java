@@ -21,15 +21,15 @@ public abstract class GenericEvent  implements Serializable {
 
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-	@Column(name="datetime")
+	@Column(name="\"datetime\"")
     private String datetime;
-	@Column(name="placeName")
+	@Column(name="\"placeName\"")
     private String place;
-	@Column(name="address")
+	@Column(name="\"address\"")
     private String address;
-	@Column(name="zipcode")
+	@Column(name="\"zipcode\"")
     private Long zipcode;
-	@Column(name="city")
+	@Column(name="\"city\"")
     private String city;
 
 	public GenericEvent(){

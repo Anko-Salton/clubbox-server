@@ -19,13 +19,13 @@ public class News implements Serializable {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 	@OneToOne
-	@JoinColumn(name="club")
+	@JoinColumn(name="\"club\"")
     private Club club;
-	@Column(name="dateadd")
+	@Column(name="\"dateadd\"")
     private String dateadd;
-	@Column(name="title")
+	@Column(name="\"title\"")
     private String title;
-	@Column(name="content")
+	@Column(name="\"content\"")
     private String content;
 
     public News(){
