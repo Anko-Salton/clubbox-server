@@ -1,21 +1,42 @@
 package com.clubboxrest.model;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="match")
 public class Match extends GenericEvent  implements Serializable {
-
+	
+	@ManyToOne
+	@JoinTable(name = "teamHome")
+	@JoinColumn(name="teamHome")
     private Team teamHome;
+	@ManyToOne
+	@JoinTable(name = "teamAway")
+	@JoinColumn(name="teamHome")
     private Team teamAway;
+	@Column(name="scoreHome")
     private Integer scoreHome;
+	@Column(name="scoreAway")
     private Integer scoreAway;
+	@Column(name="resumeHome")
     private String resumeHome;
+	@Column(name="resumeAway")
     private String resumeAway;
 
     public static class List extends ArrayList<Match> {
         private static final long serialVersionUID = 5L;
     }
-
+    public Match(){
+    	
+    }
     public Match(Integer id, String date, String time, String place, String address, Long zipcode, String city, Team teamHome, Team teamAway, Integer scoreHome, Integer scoreAway, String resumeHome, String resumeAway) {
         super(id, date, time, place, address, zipcode, city);
         this.teamHome = teamHome;

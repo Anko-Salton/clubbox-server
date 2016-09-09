@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.clubboxrest.model.mapper.UserInterface;
@@ -24,6 +25,11 @@ public class TestController {
 	@ResponseBody
 	public String aUser(@PathVariable Integer id){
 		return  new GsonBuilder().create().toJson(userInterface.findOne(id)); 
+	}
+	@RequestMapping(value = "/user/login")
+	@ResponseBody
+	public String aUserByEmail(@RequestParam String email){
+		return  new GsonBuilder().create().toJson(userInterface.findUserByEmail(email)); 
 	}
 	
 

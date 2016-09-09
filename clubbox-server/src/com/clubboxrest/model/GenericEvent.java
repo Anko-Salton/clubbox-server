@@ -8,23 +8,22 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
 
 /**
  * Created by cdsm16 on 12/04/2016.
  */
-@Entity
-@Inheritance
+@MappedSuperclass
 @Table(name="genericevent")
 public abstract class GenericEvent  implements Serializable {
 
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-	@Column(name="date")
-    private String date;
-	@Column(name="time")
-    private String time;
-	@Column(name="place")
+	@Column(name="datetime")
+    private String datetime;
+	@Column(name="placeName")
     private String place;
 	@Column(name="address")
     private String address;
@@ -42,8 +41,7 @@ public abstract class GenericEvent  implements Serializable {
 
     public GenericEvent(Integer id, String date, String time, String place, String address, Long zipcode, String city) {
         this.id = id;
-        this.date = date;
-        this.time = time;
+        this.datetime = date;
         this.place = place;
         this.address = address;
         this.zipcode = zipcode;
@@ -59,19 +57,11 @@ public abstract class GenericEvent  implements Serializable {
     }
 
     public String getDate() {
-        return date;
+        return datetime;
     }
 
     public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
+        this.datetime = date;
     }
 
     public String getPlace() {

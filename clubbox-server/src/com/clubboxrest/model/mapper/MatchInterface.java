@@ -1,14 +1,13 @@
 package com.clubboxrest.model.mapper;
 
+import java.io.Serializable;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.clubboxrest.model.User;
-
-
+import com.clubboxrest.model.Match;
 
 @Repository
-public interface UserInterface extends CrudRepository<User, Integer> {
-
-	User findUserByEmail(String email);
+public interface MatchInterface extends CrudRepository<Match, Integer>{
+	
 }
