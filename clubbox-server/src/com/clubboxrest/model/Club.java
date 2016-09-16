@@ -10,22 +10,22 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="club")
+@Table(name="\"club\"")
 public class Club implements Serializable {
 
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-	@Column(name="name", nullable=false)
+	@Column(name="\"name\"", nullable=false)
     private String name;
-	@Column(name="address", nullable=false)
+	@Column(name="\"address\"", nullable=false)
     private String address;
-	@Column(name="zipcode", nullable=false)
+	@Column(name="\"zipcode\"", nullable=false)
     private Long zipcode;
-	@Column(name="city", nullable=false)
+	@Column(name="\"city\"", nullable=false)
     private String city;
-	@Column(name="logoPath")
+	@Column(name="\"logoPath\"")
     private String logoPath;
-	@Column(name="isValidate")
+	@Column(name="\"isValidate\"")
     private boolean isValidate;
 
     public Club(){

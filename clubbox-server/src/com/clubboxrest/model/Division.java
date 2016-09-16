@@ -15,15 +15,15 @@ import javax.persistence.Table;
  * Created by cdsm16 on 12/04/2016.
  */
 @Entity
-@Table(name="division")
+@Table(name="\"division\"")
 public class Division implements Serializable {
 
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-	@Column(name="name")
+	@Column(name="\"name\"")
     private String name;
     @OneToOne
-    @JoinColumn(name="category")
+    @JoinColumn(name="\"category\"")
     private Category dept;
 
     public Division(Integer id, String name, Category dept) {

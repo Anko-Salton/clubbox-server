@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.clubboxrest.model.Match;
 import com.clubboxrest.model.mapper.MatchInterface;
 import com.clubboxrest.model.mapper.UserInterface;
+import com.google.gson.GsonBuilder;
 
 @Controller("matchController")
 public class MatchController {
@@ -27,9 +28,7 @@ public class MatchController {
 			match.setScoreHome(scoreHome);
 			match.setScoreAway(scoreAway);
 			matchInterface.save(match);
-			return "OK";
-		}else{
-			return "KO";
 		}
+		return new GsonBuilder().create().toJson(match);
 	}
 }
