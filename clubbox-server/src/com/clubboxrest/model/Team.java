@@ -20,7 +20,7 @@ import org.hibernate.mapping.Collection;
  * Created by cdsm16 on 12/04/2016.
  */
 @Entity
-@Table(name="team")
+@Table(name="\"team\"")
 public class Team implements Serializable {
 	
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
@@ -36,10 +36,7 @@ public class Team implements Serializable {
 	@OneToOne
 	@JoinColumn(name="\"category\"")
 	private Category category;
-	@OneToMany(mappedBy="teamHome")
-	private Set<Match> matchHome;
-	@OneToMany(mappedBy="teamAway")
-	private Set<Match> matchAway;
+
 
 	public Team(){
 		
@@ -94,22 +91,6 @@ public class Team implements Serializable {
 
 	public void setCategory(Category category) {
 		this.category = category;
-	}
-
-	public Set<Match> getMatchHome() {
-		return matchHome;
-	}
-
-	public void setMatchHome(Set<Match> matchHome) {
-		this.matchHome = matchHome;
-	}
-
-	public Set<Match> getMatchAway() {
-		return matchAway;
-	}
-
-	public void setMatchAway(Set<Match> matchAway) {
-		this.matchAway = matchAway;
 	}
 	
 }

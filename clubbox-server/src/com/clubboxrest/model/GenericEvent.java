@@ -16,7 +16,7 @@ import javax.persistence.Table;
  * Created by cdsm16 on 12/04/2016.
  */
 @MappedSuperclass
-@Table(name="genericevent")
+@Table(name="\"genericevent\"")
 public abstract class GenericEvent  implements Serializable {
 
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
