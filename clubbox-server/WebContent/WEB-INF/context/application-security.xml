@@ -13,7 +13,7 @@
 		<form-login 
 		password-parameter="password"
 		username-parameter="email" 
-		default-target-url="/api/connect.php"/>
+		default-target-url="/connect.php"/>
 		
 	</http>
 
