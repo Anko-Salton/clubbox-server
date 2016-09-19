@@ -17,10 +17,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_65">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/classes"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_65"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

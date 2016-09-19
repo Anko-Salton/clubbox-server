@@ -17,6 +17,7 @@ import com.clubboxrest.model.mapper.UserInterface;
 
 @Component("authenticationManagerUserDetail")
 public class AuthenticationManagerUserDetail implements UserDetailsService {
+	
 	@Autowired
 	UserInterface userInterface;
 	

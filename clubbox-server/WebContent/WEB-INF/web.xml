@@ -9,9 +9,8 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			/WEB-INF/context/application-context.xml,
 			/WEB-INF/context/application-security.xml,
-			/WEB-INF/context/application-parameter.xml
+			/WEB-INF/context/application-context.xml
 		</param-value>
 	</context-param>
 
@@ -23,7 +22,6 @@
 		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
 	</listener>
 
-	<!-- Spring child -->
 
 	<servlet>
 		<servlet-name>clubbox</servlet-name>
@@ -47,7 +45,7 @@
 	</filter-mapping>
 
 
-	<!-- <filter>
+	<filter>
 		<filter-name>CORS</filter-name>
 		<filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
 		<init-param>
@@ -75,5 +73,5 @@
 	<filter-mapping>
 		<filter-name>CORS</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping> -->
+	</filter-mapping>
 </web-app>
