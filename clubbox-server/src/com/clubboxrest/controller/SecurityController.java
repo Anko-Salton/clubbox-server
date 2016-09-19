@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,11 +22,12 @@ public class SecurityController {
 	UserInterface userInterface;
 
 	@RequestMapping(value="/connect.php")
-	@ResponseBody
+	@ResponseBody 
 	public Object callback_connect(ModelAndView model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		/**
 		 * \brief	Set version in this session
 		 */
+		
 		String login = SecurityContextHolder.getContext().getAuthentication().getName();
 		System.out.println("login : "+login);
 		User customerWeb = userInterface.findUserByEmail(login);

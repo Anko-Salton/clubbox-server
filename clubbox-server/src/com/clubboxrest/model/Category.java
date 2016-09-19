@@ -9,12 +9,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="category")
+@Table(name="\"category\"")
 public class Category {
 
 	@Id  @GeneratedValue(strategy=GenerationType.AUTO) 
 	private Integer id;
-	@Column(name="name", nullable=false)
+	@Column(name="\"name\"", nullable=false)
 	private String name;
 	
 	public Category(){

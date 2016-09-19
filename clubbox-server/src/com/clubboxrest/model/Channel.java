@@ -3,15 +3,25 @@ package com.clubboxrest.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
+//@Entity
+//@Table(name="\"channel\"")
 public class Channel implements Serializable {
 
 	
+//	@Id @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
+//	@Column(name="\"name\"")
     private String name;
+//	@Column(name="\"users\"")
     private ArrayList<User> users;
+//	@Column(name="\"messages\"")
     private ArrayList<Message> messages;
 
     public Channel(Integer id, String name, ArrayList<User> users, ArrayList<Message> messages) {

@@ -12,15 +12,15 @@ import javax.persistence.Table;
  * Created by cdsm16 on 12/04/2016.
  */
 @Entity
-@Table(name="event")
+@Table(name="\"event\"")
 public class Event extends GenericEvent {
 	
 	@OneToOne
-	@JoinColumn(name="club")
+	@JoinColumn(name="\"club\"")
     private Club club;
-	@Column(name="name")
+	@Column(name="\"name\"")
     private String name;
-	@Column(name="description")
+	@Column(name="\"description\"")
     private String description;
 
 	public Event(){

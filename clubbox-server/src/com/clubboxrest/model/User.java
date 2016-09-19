@@ -16,31 +16,31 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Type;
 
 @Entity
-@Table(name = "user")
+@Table(name = "\"user\"")
 public class User implements Serializable {
 
     public static class List extends ArrayList<User> {
         private static final long serialVersionUID = 7L;
     }
 
-    @Id				@GeneratedValue(strategy=GenerationType.AUTO)
+    @Id		@GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-    @Column(name="email",nullable=true)
+    @Column(name="\"email\"",nullable=true)
     private String email;
-    @Column(name="pass",nullable=true)
+    @Column(name="\"password\"",nullable=true)
     private String password;
-    @Column(name="name",nullable=true)
+    @Column(name="\"name\"",nullable=true)
     private String name;
-    @Column(name="birthdate",nullable=true)
+    @Column(name="\"birthdate\"",nullable=true)
     private String birthdate;
-    @Column(name="phone",nullable=true)
+    @Column(name="\"phone\"",nullable=true)
     private String phone;
-    @Column(name="profilePhoto",nullable=true)
+    @Column(name="\"profilePhoto\"",nullable=true)
     private String profilePhoto;
-    @Column(name="level",nullable=true)
+    @Column(name="\"level\"",nullable=true)
     private Integer level;
     @OneToOne
-    @JoinColumn(name="clubId")
+    @JoinColumn(name="\"clubId\"")
     private Club club;
 
     public User() {
